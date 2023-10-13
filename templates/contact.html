@@ -1,0 +1,29 @@
+{% extends "juice/templates/page.html" %}
+
+{% block content %}
+<div class="heading-text">{{ page.description }}</div>
+{{ page.content | safe }}
+
+<h1>Contact form</h1>
+<form name="contact" method="POST" data-netlify="true">
+    <input type="hidden" name="subject" value="New davehastie.com contact form submission" data-remove-prefix /> 
+    <p>
+        <label for="name">
+            Your name
+            <small>What should I call you?</small>
+        </label>
+        <input type="text" name="name" id="name" />
+    </p>
+    <p>
+        <label for="email">
+            Your email
+            <small>No spam. I promise.</small>
+        </label>
+        <input type="email" name="email" id="email" />
+    </p>
+    <p>
+      <button type="submit">Send your message</button>
+    </p>
+</form>
+
+{% endblock content %}
