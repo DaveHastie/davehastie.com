@@ -1,0 +1,16 @@
+{% macro render_header() %}
+{% set home = get_section(path="_index.md") %}
+{% set about_page = get_page(path="about/index.md") %}
+{% set articles_section = get_section(path="articles/_index.md") %}
+<a href="{{ home.permalink | safe }}">
+    <div class="logo">
+        <img style="border-radius: 50%" src="{{ get_url(path=config.extra.juice_logo_path) }}" alt="logo">
+        {{ config.extra.juice_logo_name }}
+    </div>
+</a>
+
+<nav>
+    <a class="nav-item subtitle-text" href="{{ about_page.permalink | safe }}">About</a>
+    <a class="nav-item subtitle-text" href="{{ articles_section.permalink | safe }}">Articles</a>
+</nav>
+{% endmacro render_header %}

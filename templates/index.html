@@ -1,0 +1,98 @@
+{% extends "juice/templates/index.html" %}
+
+{% block favicon %}
+    <link rel="icon" type="image/x-icon" href="{{get_url(path="icons/favicon.ico") }}">
+{% endblock favicon %}
+    
+{% block fonts %}
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Pro:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:400,500,600&display=swap" rel="stylesheet">
+{% endblock fonts %}
+
+{% block head %} 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" 
+    integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" 
+    integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" 
+    integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" 
+    integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+{% endblock head %}
+    
+{% block hero %}
+    <section class="text-center">
+        <h1 class="hero-text" style="font-size: 50px">
+            Hello! I'm Dave Hastie.
+        </h1>
+        <h3 class="title-text">
+            And this is my personal website.
+        </h3>
+        <div>
+            <div class="widget widget-lg">
+                <a class="btn" href="" aria-label="Contact me">
+                    <img src="{{ get_url(path="icons/8666723_mail.svg") }}" alt="Envelope icon">
+                    &nbsp;Contact
+                </a>
+            </div>
+            <div class="widget widget-lg">
+                <a class="btn" href="" aria-label="View CV">
+                    <img src="{{ get_url(path="icons/8666787_file_document.svg") }}" alt="Document icon">
+                    &nbsp;CV
+                </a>
+            </div>
+            <div class="widget widget-lg">
+                <a class="btn" href="https://github.com/45Point5" aria-label="45Point5 on Github">
+                    <img src="{{ get_url(path="icons/8666686_github.svg") }}" alt="Github icon">
+                    &nbsp;Github
+                </a>
+            </div>
+            <div class="widget widget-lg">
+                <a class="btn" href="" aria-label="Visit 45Point5">
+                    <img src="{{ get_url(path="icons/8666725_globe.svg") }}" alt="Globe icon">
+                    &nbsp;45Point5
+                </a>
+            </div>
+        </div>
+    </section>
+    <img class="hero-image" style="width: 40%" src="{{ get_url(path=config.extra.juice_logo_path) }}">
+
+    <div class="explore-more text" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+        Explore More ⇩
+    </div>
+    <style>
+        .hero section {
+            padding: 0 5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero section {
+                padding: 0 2rem;
+            }
+
+            .hero-image {
+                display: none
+            }
+        }
+    </style>
+{% endblock hero %}
+
+{% block content %}
+    <div id="features" class="heading-text">Welcome</div>
+    {{ section.content | safe }}
+{% endblock content %}
+
+{% block footer %}
+    <footer>
+        <small class="subtext">
+            <a href="">davehastie.com</a> © 2023
+        </small>
+        <small class="tinytext" style="padding-top: 10px;">
+            Site built using <a href="https://www.getzola.org/" target="_blank">Zola</a>, 
+            with the <a href="https://juice.huhu.io/" target="_blank">Juice theme</a> 
+            and <a href="https://www.iconfinder.com/iconsets/feather-5" target="_blank">Feather Icons</a> 
+            (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">licence</a>).
+        </small>
+    </footer>
+{% endblock footer %}
