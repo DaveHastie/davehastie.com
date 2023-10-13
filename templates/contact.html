@@ -7,7 +7,7 @@
 <h1>Contact form</h1>
 {% if page.extra.show_form %}
 <form class="contact" name="contact" method="POST" data-netlify="true" 
-    data-netlify-honeypot="bot-field" action="{{get_url(path="@/contact_success.md")}}">
+    data-netlify-honeypot="bot-field" action="/contact-success">
     <input type="hidden" name="subject" value="New davehastie.com contact form submission" data-remove-prefix /> 
     <div class="form-item">
         <label for="name">
