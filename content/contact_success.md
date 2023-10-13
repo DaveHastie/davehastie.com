@@ -1,6 +1,6 @@
 +++
 title = "Contact success"
-description = "Get in touch."
+description = "Get in touch"
 template = "contact.html"
 weight = 2
 
