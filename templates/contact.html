@@ -5,25 +5,38 @@
 {{ page.content | safe }}
 
 <h1>Contact form</h1>
-<form name="contact" method="POST" data-netlify="true">
+{% if page.extra.show_form %}
+<form class="contact" name="contact" method="POST" data-netlify="true" 
+    data-netlify-honeypot="bot-field" action="{{get_url(path="@/contact_success.md")}}">
     <input type="hidden" name="subject" value="New davehastie.com contact form submission" data-remove-prefix /> 
-    <p>
+    <div class="form-item">
         <label for="name">
             Your name
             <small>What should I call you?</small>
         </label>
-        <input type="text" name="name" id="name" />
-    </p>
-    <p>
+        <input type="text" name="name" id="name"/>
+    </div>
+    <div class="form-item">
         <label for="email">
             Your email
             <small>No spam. I promise.</small>
         </label>
-        <input type="email" name="email" id="email" />
-    </p>
-    <p>
-      <button type="submit">Send your message</button>
-    </p>
+        <input type="email" name="email" id="email"/>
+    </div>
+    <div class="form-item">
+        <label for="message">
+            Your message
+            <small>How can I help you?</small>
+        </label>
+        <textarea name="message" id="message"> </textarea>
+    </div>
+    <div class="form-item">
+      <button class="contact-btn" type="submit">Send your message</button>
+    </div>
 </form>
+{% else %}
+<p>Thank you for submitting your message through the contact form.</p>
+<p>If required, I will try to reply when I get a moment.</p>
+{% endif %}
 
 {% endblock content %}

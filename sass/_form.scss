@@ -1,0 +1,53 @@
+.contact {
+    display: block; 
+    width: 100%;
+}
+
+.contact .form-item {
+    margin-block-start: 1em; 
+    margin-block-end:1em; 
+    margin-inline-start: 0px; 
+    margin-inline-end: 0px;
+
+    label small {
+        display:block;
+        color: #9b9b9b;
+        font-size: 70%;
+    }
+
+    input[type="text"], [type="email"] {
+        display: inline-block; 
+        width:100%;
+        line-height: 25px;
+        border: 2px solid var(--primary-color);
+        border-radius: 3px;
+        color: var(--secondary-text-color);
+    }
+
+    textarea {
+        height: 8em;
+        display: inline-block; 
+        width:100%;
+        line-height: 25px;
+        border: 2px solid var(--primary-color);
+        border-radius: 3px;
+        color: var(--secondary-text-color);
+    }
+
+    .contact-btn {
+        background-color: var(--primary-link-color);
+        border: 2px solid var(--primary-color);
+        color: var(--secondary-text-color);
+        border-radius: 3px;
+        line-height: 25px;
+    }
+
+    .contact-btn:hover,.btn:focus {
+        background-color: var(--tertiary-color);
+        background-position:0 -0.5em;
+        cursor: pointer;
+    }
+      
+
+}
+

@@ -1,12 +1,13 @@
 +++
-title = "Contact"
-description = "Get in touch"
+title = "Contact success"
+description = "Get in touch."
 template = "contact.html"
-weight = 1
+weight = 2
 
 [extra]
-show_form = true
+show_form = false
 +++
+
 
 If you'd like to get in touch, I'd love to hear from you. Please reach out by email. 
 You won't find my email address here, but if you append my first name, or my initials to 
