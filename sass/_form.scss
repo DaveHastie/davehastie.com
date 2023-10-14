@@ -11,7 +11,7 @@
 
     label small {
         display:block;
-        color: #9b9b9b;
+        color: var(--subtle-color);
         font-size: 70%;
     }
 
@@ -51,3 +51,12 @@
 
 }
 
+@media (prefers-color-scheme: dark) {
+    .contact .form-item {
+        input, textarea {
+            background-color: var(--quaternary-color);
+            border-color: var(--primary-text-color);
+        }
+
+    }
+}
