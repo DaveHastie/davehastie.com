@@ -53,7 +53,7 @@
 
 @media (prefers-color-scheme: dark) {
     .contact .form-item {
-        input, textarea {
+        input[type="text"], input[type="email"], textarea {
             background-color: var(--quaternary-color);
             border-color: var(--primary-text-color);
         }
